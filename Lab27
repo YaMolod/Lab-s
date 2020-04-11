@@ -1,0 +1,307 @@
+// Муллов Игорь, лаб.27 Сохранение данных в файле с использованием потоков
+class10_main
+#include "Pair.h"
+#include "file_workr.h"
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	Pair p,p1,p2;
+	int k, selection;
+	char file_name[30];
+	do
+	{
+		cout << "1.Make file" << endl
+			<< "2.Print file" << endl
+			<< "3.Delete record from file" << endl
+			<<"4.Add record"<<endl
+			<<"5.Change record"<<endl
+			<< "6.Exit" << endl;
+
+		cin >> selection;
+		switch (selection)
+		{
+		case 1:
+			cout << "file name:"; cin >> file_name;
+			k = make_file(file_name);
+			if (k < 0) cout << "Error"<<endl;
+			break;
+		case 2:
+			cout << "file name:"; cin >> file_name;
+			k = print_file(file_name);
+			if (k == 0) cout << "Empty file"<<endl;
+			if (k < 0)cout << "Error" << endl;
+			break;
+		case 3:
+			cout << "file name:"; cin >> file_name;
+			int value; cout << "Значение элемента:"; cin >> value;
+			k = del_file(file_name, value);
+			if (k < 0) cout << "Error"<<endl;
+			if (k == 0) cout << "Empty file" << endl;
+			break;
+		case 4:
+			int number, amount, N;
+			cout << "file name:"; cin >> file_name;
+			cout << "Номер элемента:"; cin >> number;
+			k = add_file(file_name, number);
+			if (k < 0) cout << "Error";
+			if (k == 0) k = add_end(file_name);
+			break;
+		case 5:
+			cout << "file name:"; cin >> file_name;
+			cout << "Значение first:"; cin >> number;
+			k = change_file(file_name, number);
+			if (k < 0) cout << "Error"<<endl;
+			if (k == 0) cout << "No record found"<<endl;
+			break;
+		}
+	} while (selection != 6);
+	return selection;
+}
+
+Pair.h
+#pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+class Pair
+{
+	int first;
+	double second;
+public:
+	Pair() { first = 0; second = 0; };
+	Pair(int f, double s) { first = f; second = s; }
+	Pair(const Pair& t) { first = t.first; second = t.second; }
+	void set_first(int f) { first += f; }
+	void set_second(double s) { second += s; }
+	int get_first() { return first; }
+	double get_second() { return second; }
+	~Pair() {};
+	
+	Pair& operator=(const Pair&);
+	Pair& operator++();
+	Pair operator++(int);
+	Pair operator>(const Pair&);
+	Pair operator<(const Pair&);
+
+	friend istream& operator>>(istream& in, Pair& t);
+	friend ostream& operator<<(ostream& out, const Pair& t);
+
+	friend fstream& operator>>(fstream& fin, Pair& p);
+	friend fstream& operator<<(fstream& fout, const Pair& p);
+
+};
+
+Pair.cpp
+#include "Pair.h"
+#include <iostream>
+using namespace std;
+
+Pair& Pair::operator=(const Pair& t)
+{
+	if (&t == this) return *this;
+	first = t.first;
+	second = t.second;
+	return *this;
+}
+
+Pair& Pair::operator ++()
+{
+	this->first++;
+	return *this;
+}
+
+Pair Pair::operator++ (int)
+{
+	Pair temp(*this);
+	this->second++;
+	return temp;
+}
+
+Pair Pair::operator <(const Pair& t)
+{
+	if (this->first < t.first && this->second < t.second)
+	{
+		cout << "Да " << endl;
+		return *this;
+	}
+	else
+	{
+		cout << "Нет " << endl;
+		return t;
+	}
+
+}
+
+Pair Pair::operator >(const Pair& t)
+{
+	if (this->first > t.first&& this->second > t.second)
+	{
+		cout << "Да " << endl;
+		return *this;
+	}
+	else
+	{
+		cout << "Нет " << endl;
+		return t;
+	}
+}
+
+istream& operator>>(istream& in, Pair& t)
+{
+	cout << "first:"; cin >> t.first;
+	cout << "second:"; cin >> t.second;
+	return in;
+}
+
+ostream& operator<<(ostream& out, const Pair& t)
+{
+	out<< t.first << " : " << t.second << endl;
+	return out; 
+}
+
+fstream& operator>>(fstream& fin, Pair& p)
+{
+	fin >> p.first;
+	fin >> p.second;
+	return fin;
+}
+fstream& operator<<(fstream& fout, const Pair& p)
+{
+	fout << p.first <<endl << p.second << endl;
+	return fout;
+}
+
+file_work.h
+#pragma once
+#include "Pair.h"
+#include <iostream>
+using namespace std;
+
+int make_file(const char* f_name)
+{
+	fstream stream(f_name, ios::out);
+	if (!stream) return -1;
+	int n;
+	Pair p;
+	cout << "Количество элементов:"; cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> p;
+		stream << p << endl;
+	}
+	stream.close();
+	return n;
+}
+
+int print_file(const char* f_name)
+{
+	fstream stream(f_name, ios::in);
+	if (!stream) return-1;
+	Pair p; int i = 0;
+	while (stream>>p)
+	{
+		cout << p;
+		i++;
+	}
+	stream.close();
+	return i;
+}
+
+int del_file(const char* f_name, int k)
+{
+	fstream temp("temp", ios::out);
+	fstream stream(f_name, ios::in);
+	if (!stream) return -1;
+	int i = 0,n=0; Pair p;
+	while (stream >> p)
+	{
+		n += p.get_first();
+		n += p.get_second();
+		if (stream.eof()) break;	
+		if (n< k) temp << p;
+		i++;
+		n = 0;
+	}
+	stream.close(); temp.close();
+	remove(f_name);
+	rename("temp", f_name);
+	return i;
+}
+
+int add_file(const char* f_name, int k)
+{
+	fstream temp("temp", ios::out);
+	fstream stream(f_name, ios::in);
+	if (!stream) return -1;
+	Pair p, pp; int i = 0, l = 0, n;
+	cout << "Количество элементов:"; cin >> n;
+	while (stream >> p)
+	{
+		if (stream.eof()) break;
+		i++;
+		temp << p;
+		if (i == k)
+		{
+			for (int i = 0; i < n; i++)
+			{
+				cin >> pp;
+				temp << pp << endl;
+				l++;
+			}
+		}			
+		
+	}
+	stream.close(); temp.close();
+	remove(f_name);
+	rename("temp", f_name);
+	return l;
+}
+
+int add_end(const char* f_name)
+{
+	fstream stream(f_name, ios::app);
+	if (!stream) return -1;
+	int i = 0, n;
+	Pair p;
+	cout << "Количество элементов:"; cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> p;
+		stream << p << endl;
+	}
+	return i;
+}
+
+int change_file(const char* f_name, int k)
+{
+	fstream temp("temp", ios::out);
+	fstream stream(f_name, ios::in);
+	if (!stream) return -1;
+	Pair p; int i = 0, l = 0;
+	int L;
+	while (!stream.eof())
+	{
+		stream >> p;
+		if (stream.eof()) break;
+		if (p.get_first() == k)
+		{
+			cout << p << " - увеличиться на:"; cin >> L;
+			p.set_first(L);
+			temp << p;
+			l++;
+		}
+		else temp << p;
+	}
+	stream.close(); temp.close();
+	remove(f_name);
+	rename("temp", f_name);
+	return l;	
+}
