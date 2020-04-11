@@ -1,0 +1,220 @@
+// Муллов Игорь,лаб.26, Обработка исключений (задание 3)
+Class9-2_main.cpp
+#include "Error.h"
+#include "List.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	try
+	{
+		List x(2);
+		List y;
+		cout << "x:" << endl << x << endl;
+		cout << "Номер:"; int i; cin >> i;
+		cout << x[i] << endl;
+		y = (x + 100);
+		cout << "y:" << endl << y << endl;
+		++x;
+		cout << "x:" << endl << x << endl;
+		List z(29);
+		++z;
+		cout << z;
+	}
+	catch (Error & e)
+	{
+		e.what();
+	}
+}
+
+List.h
+#pragma once
+#include <iostream>
+using namespace std;
+
+const int MAX_SIZE = 30;
+
+class List
+{
+	int size;
+	int* beg;
+public:
+	List() { size - 0; beg = nullptr; }
+	List(int s);
+	List(int s, int* mas);
+	List(const List& l);
+	~List();
+	List& operator=(const List& l);
+	int operator [](int i);
+	int operator()();
+	List& operator+(int a);
+	List& operator++();
+	friend ostream& operator<<(ostream& out, const List& l);
+	friend istream& operator>>(istream& in, List& l);
+};
+
+List.cpp
+#include "List.h"
+#include "Error.h"
+
+List::List(int s)
+{
+	if (s > MAX_SIZE) throw MaxSizeError();
+	size = s;
+	beg = new int[s];
+	for (int i = 0; i < size; i++)
+	{
+		beg[i] = 0;
+	}
+}
+List::List(const List& l)
+{
+	size = l.size;
+	for (int i = 0; i < size; i++)
+	{
+		beg[i] = l.beg[i];
+	}
+}
+List::~List()
+{
+	if (beg != nullptr) delete[]beg;
+}
+List::List(int s, int* mas)
+{
+	if (s > MAX_SIZE) throw 1;
+	size = s;
+	beg = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		beg[i] = mas[i];
+	}
+}
+List& List::operator=(const List& l)
+{
+	if (this == &l) return *this;
+	if (beg != nullptr) delete[]beg;
+	size = l.size;
+	beg = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		beg[i] = l.beg[i];
+	}
+	return *this;
+}
+
+ostream& operator<<(ostream& out, const List& l)
+{
+	if (l.size == 0) out << "Empty" << endl;
+	else
+	{
+		for (int i = 0; i < l.size; i++)
+		{
+			out << l.beg[i] << " ";
+		}
+		out << endl;
+		return out;
+	}
+}
+istream& operator>>(istream& in, List& l)
+{
+	for (int i = 0; i < l.size; i++)
+	{
+		cout << ">";
+		in >> l.beg[i];
+	}
+	return in;
+}
+int List::operator[](int i)
+{
+	if (i < 0) throw IndexError1();
+	if (i >= size) throw IndexError2();
+	return beg[i];
+}
+List& List::operator+(int a)
+{
+	for (int i = 0; i < size; i++)
+	{
+		beg[i] += a;
+	}
+	return *this;
+}
+int List::operator()()
+{
+	return size;
+}
+List& List::operator++()
+{
+	if (size + 1 > MAX_SIZE) throw MaxSizeError();
+	else
+	{
+		List temp(size, beg);
+		int n;
+		cout << ">"; cin >> n;
+		size++;
+
+		delete[] beg;
+		beg = new int[size];
+		for (int i = 0; i < size - 1; i++)
+		{
+			beg[i] = temp.beg[i];
+		}
+		beg[size - 1] = n;
+		return *this;
+	}
+}
+
+Error.h
+#pragma once
+#include <string>
+#include <iostream>
+using namespace std;
+
+class Error
+{
+public:
+	virtual void what() {};
+	
+};
+class IndexError :public Error
+{
+protected :
+	string msg;
+public:
+	IndexError() { msg = "Index Error"; }
+	virtual void what() { cout << msg<<endl; }
+};
+class SizeError :public Error
+{
+protected:
+	string msg;
+public:
+	SizeError() { msg = "Size Error"; }
+	virtual void what() { cout << msg<<endl; }
+};
+class MaxSizeError :public SizeError
+{
+protected:
+	string msg_;
+public:
+	MaxSizeError() { SizeError(); msg_ = "size>MAX_SIZE"; }
+	virtual void what() { cout << msg<< "-" << msg_; }
+
+};
+class IndexError1 :public IndexError
+{
+protected:
+	string msg_;
+public:
+	IndexError1() { IndexError(); msg_ = "index<0"; }
+	virtual void what() { cout << msg<<"-" << msg_ << endl; }
+};
+class IndexError2 :public IndexError
+{
+protected:
+	string msg_;
+public:
+	IndexError2() { IndexError(); msg_ = "index>size"; }
+	virtual void what() { cout << msg<<"-" << msg_ << endl; }
+};
