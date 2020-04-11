@@ -1,0 +1,165 @@
+// Муллов Игорь, лаб.26 ,Обработка исключений (задание 1)
+Class9_main.cpp
+#include "List.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	try
+	{
+		List x(2);
+		List y;
+		cout << "x:" << endl << x << endl;
+		cout << "Номер:"; int i; cin >> i;
+		cout << x[i] << endl;
+		y = (x + 100);
+		cout << "y:"<<endl << y << endl;
+		++x;
+		cout << "x:" << endl << x << endl;
+		List z(30);
+		++z;
+		cout << z;
+	}
+	catch (int)
+	{
+		cout << "ERROR" << endl;
+	}
+	return 0;
+}
+
+List.h
+#pragma once
+#include <iostream>
+using namespace std;
+
+const int MAX_SIZE = 30;
+
+class List
+{
+	int size;
+	int* beg;
+public:
+	List() { size - 0; beg = nullptr; }
+	List(int s);
+	List(int s, int* mas);
+	List(const List& l);
+	~List();
+	List& operator=(const List& l);
+	int operator [](int i);
+	int operator()();
+	List& operator+(int a);
+	List& operator++();
+	friend ostream& operator<<(ostream& out, const List& l);
+	friend istream& operator>>(istream& in, List& l);
+};
+
+List.cpp
+#include "List.h"
+
+List::List(int s)
+{
+	if (s > MAX_SIZE) throw 1;
+	size = s;
+	beg = new int[s];
+	for (int i = 0; i < size; i++)
+	{
+		beg[i] = 0;
+	}
+}
+List::List(const List& l)
+{
+	size = l.size;
+	for (int i = 0; i < size; i++)
+	{
+		beg[i] = l.beg[i];
+	}
+}
+List::~List()
+{
+	if (beg != nullptr) delete[]beg;
+}
+List::List(int s, int* mas)
+{
+	if (s > MAX_SIZE) throw 1;
+	size = s;
+	beg = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		beg[i] = mas[i];
+	}
+}
+ List& List::operator=(const List& l)
+{
+	if (this == &l) return *this;
+	if (beg != nullptr) delete[]beg;
+	size = l.size;
+	beg = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		beg[i] = l.beg[i];
+	}
+	return *this;
+}
+
+ostream& operator<<(ostream& out, const List& l)
+{
+	if (l.size == 0) out << "Empty" << endl;
+	else
+	{
+		for (int i = 0; i < l.size; i++)
+		{
+			out << l.beg[i] << " ";
+		}
+		out << endl;
+		return out;
+	}
+}
+istream& operator>>(istream& in, List& l)
+{
+	for (int i = 0; i < l.size; i++)
+	{
+		cout << ">";
+		in >> l.beg[i];
+	}
+	return in;
+}
+int List::operator[](int i)
+{
+	if (i < 0) throw 2;
+	if (i >= size) throw 2;
+	return beg[i];
+}
+List& List::operator+(int a)
+{
+	for (int i = 0; i < size; i++)
+	{
+		beg[i] += a;
+	}
+	return *this;
+}
+int List::operator()()
+{
+	return size;
+}
+List& List::operator++()
+{
+	if (size + 1 > MAX_SIZE) throw 3;
+	else
+	{
+		List temp(size, beg);
+		int n;
+		cout << ">"; cin >> n;
+		size++;
+
+		delete[] beg;
+		beg = new int[size];
+		for (int i = 0; i < size - 1; i++)
+		{
+			beg[i] = temp.beg[i];
+		}
+		beg[size - 1] = n;
+		return *this;
+	}
+}
