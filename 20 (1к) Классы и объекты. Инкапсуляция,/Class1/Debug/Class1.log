@@ -1,0 +1,52 @@
+﻿  fraction.cpp
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(4,20): error C2653: fraction: не является именем класса или пространства имен
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(6,2): error C2065: first: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(6,13): error C2065: second: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(8,20): error C2653: fraction: не является именем класса или пространства имен
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(10,27): error C2065: first: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(11,27): error C2065: second: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(13,20): error C2653: fraction: не является именем класса или пространства имен
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(15,22): error C2065: first: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(16,23): error C2065: second: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(18,22): error C2653: fraction: не является именем класса или пространства имен
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(20,9): error C2065: first: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\fraction.cpp(20,17): error C2065: second: необъявленный идентификатор
+  Class1_main.cpp
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(4,23): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(4,10): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "make_fraction"
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(5,1): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(5,1): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(12,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(13,11): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "A"
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(13,11): error C2065: A: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(14,11): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "B"
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(14,11): error C2065: B: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(15,2): error C2065: A: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(16,2): error C2065: B: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(17,2): error C2065: A: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(18,2): error C2065: B: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(20,23): error C2065: A: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(21,23): error C2065: B: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(23,12): error C2065: x: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(23,28): error C2061: синтаксическая ошибка: идентификатор "fraction"
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(24,2): error C2065: x: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(25,2): error C2065: x: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(26,2): error C2065: x: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(27,23): error C2065: x: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(29,11): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mas"
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(29,11): error C2065: mas: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(32,3): error C2065: mas: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(36,3): error C2065: mas: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(40,3): error C2065: mas: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(41,31): error C2065: mas: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(44,12): error C2065: p_mas: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(44,32): error C2061: синтаксическая ошибка: идентификатор "fraction"
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(47,3): error C2065: p_mas: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(51,3): error C2065: p_mas: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(55,3): error C2065: p_mas: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(56,33): error C2065: p_mas: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(63,11): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "F"
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(63,11): error C2065: F: необъявленный идентификатор
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(63,15): error C3861: make_fraction: идентификатор не найден
+C:\Users\skyst\source\repos\Class1\Class1\Class1_main.cpp(64,2): error C2065: F: необъявленный идентификатор
+  Создание кода...
