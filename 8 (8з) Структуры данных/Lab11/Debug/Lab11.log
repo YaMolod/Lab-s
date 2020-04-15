@@ -1,0 +1,4 @@
+﻿  Lab11.cpp
+C:\Users\skyst\source\repos\Lab11\Lab11\Lab11.cpp(89): warning C4715: delete_obj: значение возвращается не при всех путях выполнения
+C:\Users\skyst\source\repos\Lab11\Lab11\Lab11.cpp(108): warning C4715: add_obj: значение возвращается не при всех путях выполнения
+  Lab11.vcxproj -> C:\Users\skyst\source\repos\Lab11\Debug\Lab11.exe
