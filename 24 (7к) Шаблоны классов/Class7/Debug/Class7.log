@@ -1,0 +1,4 @@
+﻿  Class7_main.cpp
+C:\Users\skyst\source\repos\Class7\Class7\Class7_main.cpp(7,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+C:\Users\skyst\source\repos\Class7\Class7\List.h(69): warning C4715: List<Pair>::operator[]: значение возвращается не при всех путях выполнения
+  Class7.vcxproj -> C:\Users\skyst\source\repos\Class7\Debug\Class7.exe
