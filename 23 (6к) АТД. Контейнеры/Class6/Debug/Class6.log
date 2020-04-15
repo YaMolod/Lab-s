@@ -1,0 +1,3 @@
+﻿  Class6_main.cpp
+C:\Users\skyst\source\repos\Class6\Class6\Class6_main.cpp(6,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  Class6.vcxproj -> C:\Users\skyst\source\repos\Class6\Debug\Class6.exe
