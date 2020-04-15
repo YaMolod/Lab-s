@@ -1,0 +1,6 @@
+﻿  Lab18.cpp
+C:\Users\skyst\source\repos\Lab18\Lab18\Lab18.cpp(80,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\source\repos\Lab18\Lab18\Lab18.cpp(87,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\source\repos\Lab18\Lab18\Lab18.cpp(94,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\source\repos\Lab18\Lab18\Lab18.cpp(155,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Lab18.vcxproj -> C:\Users\skyst\source\repos\Lab18\Debug\Lab18.exe
