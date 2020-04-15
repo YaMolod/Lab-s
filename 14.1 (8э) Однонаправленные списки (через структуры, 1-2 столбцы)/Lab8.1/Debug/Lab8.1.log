@@ -1,0 +1,4 @@
+﻿  Lab8.1.cpp
+C:\Users\skyst\source\repos\Lab8.1\Lab8.1\Lab8.1.cpp(96,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\skyst\source\repos\Lab8.1\Lab8.1\Lab8.1.cpp(78): warning C4715: del: значение возвращается не при всех путях выполнения
+  Lab8.1.vcxproj -> C:\Users\skyst\source\repos\Lab8.1\Debug\Lab8.1.exe
