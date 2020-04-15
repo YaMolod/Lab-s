@@ -1,0 +1,3 @@
+﻿  Zadacha4_main.cpp
+C:\Users\skyst\source\repos\Class11\Zadacha4\Zadacha4_main.cpp(89,10): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  Zadacha4.vcxproj -> C:\Users\skyst\source\repos\Class11\Debug\Zadacha4.exe

@@ -1,0 +1,6 @@
+﻿  Pair.cpp
+C:\Users\skyst\source\repos\Class11\Zadacha_2\Pair.cpp(35,8): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  Zadacha3_main.cpp
+  Создание кода...
+C:\Users\skyst\source\repos\Class11\Zadacha_2\Pair.cpp(37): warning C4172: возвращение адреса локальной или временной переменной : n
+  Zadacha_3.vcxproj -> C:\Users\skyst\source\repos\Class11\Debug\Zadacha_3.exe
