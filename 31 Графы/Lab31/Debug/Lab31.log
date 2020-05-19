@@ -1,0 +1,43 @@
+﻿  Graph.cpp
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(295,24): warning C4091: extern : пропускается слева от "vertCoord", когда ни одна переменная не объявлена
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(65,15): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(66,15): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(101,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(196,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(193): message : во время компиляции функции-члена класс шаблон "int Graph<int>::Dijsktra(T &)"
+          with
+          [
+              T=int
+          ]
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(42): message : выполняется компиляция ссылки на экземпляр шаблон функции "int Graph<int>::Dijsktra(T &)"
+          with
+          [
+              T=int
+          ]
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(11): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Graph<int>"
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(201,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(203,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(214,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(223,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(228,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(238,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(249,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(260,46): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(61,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(60): message : во время компиляции функции-члена класс шаблон "int Graph<int>::GetVertPos(const T &)"
+          with
+          [
+              T=int
+          ]
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(146): message : выполняется компиляция ссылки на экземпляр шаблон функции "int Graph<int>::GetVertPos(const T &)"
+          with
+          [
+              T=int
+          ]
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(42): message : во время компиляции функции-члена класс шаблон "Graph<int>::Graph(void)"
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(11): message : выполняется компиляция ссылки на экземпляр шаблон функции "Graph<int>::Graph(void)"
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(184,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(182): message : во время компиляции функции-члена класс шаблон "bool Graph<int>::AllVisited(bool *)"
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(233): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool Graph<int>::AllVisited(bool *)"
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(265): warning C4715: Graph<int>::Dijsktra: значение возвращается не при всех путях выполнения
+  Lab31.vcxproj -> C:\Users\skyst\Desktop\Lab31\Debug\Lab31.exe
