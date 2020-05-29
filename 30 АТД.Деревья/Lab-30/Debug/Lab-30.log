@@ -1,0 +1,36 @@
+﻿  Lab-30_main.cpp
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(484,23): warning C4244: аргумент: преобразование "int" в "GLfloat", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(484,23): message : Сообщение диагностики возникло в созданной компилятором функции "void drawText(T,void *,int,int,int,int)"
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(484,15): warning C4244: аргумент: преобразование "int" в "GLfloat", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(484,15): message : Сообщение диагностики возникло в созданной компилятором функции "void drawText(T,void *,int,int,int,int)"
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(518,15): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(613): message : выполняется компиляция ссылки на экземпляр шаблон функции "void display<T>(void)"
+          with
+          [
+              T=int
+          ]
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(476): message : выполняется компиляция ссылки на экземпляр шаблон функции "void initWindow<T>(int,char **)"
+          with
+          [
+              T=int
+          ]
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(468): message : во время компиляции функции-члена класс шаблон "void Tree<int>::drawTree(int,char **,int,int,int,int)"
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Lab-30_main.cpp(9): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Tree<int>::drawTree(int,char **,int,int,int,int)"
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Lab-30_main.cpp(5): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Tree<int>"
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(487,20): warning C4018: <: несоответствие типов со знаком и без знака
+  Tree.cpp
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(484,23): warning C4244: аргумент: преобразование "int" в "GLfloat", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(484,23): message : Сообщение диагностики возникло в созданной компилятором функции "void drawText(T,void *,int,int,int,int)"
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(484,15): warning C4244: аргумент: преобразование "int" в "GLfloat", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.h(484,15): message : Сообщение диагностики возникло в созданной компилятором функции "void drawText(T,void *,int,int,int,int)"
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.cpp(50,20): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.cpp(51,20): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.cpp(62,20): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.cpp(63,20): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.cpp(79,20): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.cpp(80,20): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.cpp(90,9): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.cpp(91,9): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\skyst\source\repos\Lab-30\Lab-30\Tree.cpp(92,9): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  Создание кода...
+  Lab-30.vcxproj -> C:\Users\skyst\source\repos\Lab-30\Debug\Lab-30.exe
