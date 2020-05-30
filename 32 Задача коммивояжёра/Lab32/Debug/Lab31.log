@@ -1,0 +1,20 @@
+﻿  Graph.cpp
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(311,24): warning C4091: extern : пропускается слева от "vertCoord", когда ни одна переменная не объявлена
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(67,15): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(68,15): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(103,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(77,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(76): message : во время компиляции функции-члена класс шаблон "int Graph<int>::GetVertPos(const T &)"
+          with
+          [
+              T=int
+          ]
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(162): message : выполняется компиляция ссылки на экземпляр шаблон функции "int Graph<int>::GetVertPos(const T &)"
+          with
+          [
+              T=int
+          ]
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.h(44): message : во время компиляции функции-члена класс шаблон "Graph<int>::Graph(void)"
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(12): message : выполняется компиляция ссылки на экземпляр шаблон функции "Graph<int>::Graph(void)"
+C:\Users\skyst\Desktop\Lab31\Lab31\Graph.cpp(12): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Graph<int>"
+  Lab31.vcxproj -> C:\Users\skyst\Desktop\Lab31\Debug\Lab31.exe
