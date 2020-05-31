@@ -1,20 +1,19 @@
 #include <iostream>
-#include <fstream>
 #include "Graph.h"
 using namespace std;
 const int maxn = 20;
 int s, min, c;
 bool found = false;
-int m[maxn]; //текущий путь
-int minm[maxn]; //минимальный путь
+int m[maxn]; //ГІГҐГЄГіГ№ГЁГ© ГЇГіГІГј
+int minm[maxn]; //Г¬ГЁГ­ГЁГ¬Г Г«ГјГ­Г»Г© ГЇГіГІГј
 
 void Result(int n)
 {
 	if (found)
 	{
 		cout << endl;
-		cout << "Вес минимального пути: " << min << endl;
-		cout << "Путь: ";
+		cout << "Г‚ГҐГ± Г¬ГЁГ­ГЁГ¬Г Г«ГјГ­Г®ГЈГ® ГЇГіГІГЁ: " << min << endl;
+		cout << "ГЏГіГІГј: ";
 		int c = 1;
 		for (int i = 0; i < n; i++)
 		{
@@ -25,7 +24,7 @@ void Result(int n)
 		}
 		cout << minm[0] << endl;
 	}
-	else cout << "Путь не найден";
+	else cout << "ГЏГіГІГј Г­ГҐ Г­Г Г©Г¤ГҐГ­";
 }
 void Salesman(int x, int n)
 {
